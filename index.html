@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMSGate - Private & Secure SMS Gateway for Android</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function copyCode(element) {
+            const code = element.previousElementSibling.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const button = element;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -185,6 +198,7 @@
     -H "Content-Type: application/json" \
     -d '{ "message": "Hello, doctors!", "phoneNumbers": ["+19162255887", "+19162255888"] }' \
     https://api.sms-gate.app/3rdparty/v1/message</code></pre>
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
                 </div>
             </div>
         </section>
@@ -206,9 +220,11 @@
                         <p>Official Node.js/JavaScript client library for SMS Gateway</p>
                         <div class="library-install">
                             <code>npm install android-sms-gateway</code>
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
                         </div>
                         <div class="library-install">
                             <code>bun add android-sms-gateway</code>
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
                         </div>
                         <div class="library-links">
                             <a href="https://www.npmjs.com/package/android-sms-gateway">NPM</a>
@@ -229,6 +245,7 @@
                         <p>Official Python client library for SMS Gateway</p>
                         <div class="library-install">
                             <code>pip install android-sms-gateway</code>
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
                         </div>
                         <div class="library-links">
                             <a href="https://pypi.org/project/android-sms-gateway/">PyPI</a>
@@ -249,6 +266,7 @@
                         <p>Official Go client library for SMS Gateway</p>
                         <div class="library-install">
                             <code>go get github.com/android-sms-gateway/client-go</code>
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
                         </div>
                         <div class="library-links">
                             <a href="https://pkg.go.dev/github.com/android-sms-gateway/client-go">pkg.go.dev</a>
@@ -269,6 +287,7 @@
                         <p>Official PHP client library for SMS Gateway</p>
                         <div class="library-install">
                             <code>composer require capcom6/android-sms-gateway</code>
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
                         </div>
                         <div class="library-links">
                             <a href="https://packagist.org/packages/capcom6/android-sms-gateway">Packagist</a>
@@ -295,8 +314,9 @@
                         </div>
                         <p>Install the CLI tool from GitHub:</p>
                         <div class="cli-install">
-                            <code>curl -LO https://github.com/android-sms-gateway/cli/releases/latest/download/ smsgate_Linux_x86_64.tar.gz<br/>
+                            <code>curl -LO https://github.com/android-sms-gateway/cli/releases/latest/download/smsgate_Linux_x86_64.tar.gz<br/>
                             tar xvf smsgate_Linux_x86_64.tar.gz</code>
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
                         </div>
 
                         <div class="cli-examples">
@@ -304,6 +324,7 @@
                             <div class="example-block">
                                 <code># Send an SMS message<br/>
                                 smsgate send -u &lt;username&gt; -p &lt;password&gt; --phone '+19162255887' 'Hello, Dr. Turk!'</code>
+                                <button class="copy-button" onclick="copyCode(this)">Copy</button>
                             </div>
                             <div class="example-block">
                                 <code># Use environment variables<br/>
@@ -311,6 +332,7 @@
                                 export ASG_PASSWORD=&lt;password&gt;<br/>
                                 # Send a message to multiple numbers<br/>
                                 smsgate send --phone '+19162255887' --phone '+19162255888' 'Hello, doctors!'</code>
+                                <button class="copy-button" onclick="copyCode(this)">Copy</button>
                             </div>
                         </div>
                     </div>

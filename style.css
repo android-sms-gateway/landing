@@ -214,6 +214,7 @@ nav .container {
     border-radius: 0.5rem;
     padding: 2rem;
     overflow-x: auto;
+    position: relative;
 }
 
 .code-block pre {
@@ -224,6 +225,30 @@ nav .container {
     color: #fff;
     font-family: 'Monaco', 'Consolas', monospace;
     font-size: 0.9rem;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background 0.2s;
+}
+
+.copy-button:hover {
+    background: var(--primary-dark);
+}
+
+.code-block pre,
+.library-install code,
+.example-block code {
+    padding-right: 4rem;
 }
 
 /* Modes Section */
@@ -356,6 +381,7 @@ nav .container {
     padding: 1rem;
     margin: 1rem 0;
     overflow-x: auto;
+    position: relative;
 }
 
 .library-install code {
@@ -421,6 +447,7 @@ nav .container {
     padding: 1.5rem;
     margin: 1.5rem 0;
     overflow-x: auto;
+    position: relative;
 }
 
 .cli-install code {
@@ -443,12 +470,19 @@ nav .container {
     padding: 1rem;
     margin: 1rem 0;
     overflow-x: auto;
+    position: relative;
 }
 
 .example-block code {
     color: #fff;
     font-family: 'Monaco', 'Consolas', monospace;
     font-size: 0.9rem;
+}
+
+.code-block,
+.library-install,
+.example-block {
+    position: relative;
 }
 
 /* Footer */
