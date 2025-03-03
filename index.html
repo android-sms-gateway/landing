@@ -17,6 +17,34 @@
                 }, 2000);
             });
         }
+
+        // Theme toggle functionality
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(newTheme);
+        }
+
+        // On page load set the theme based on localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            let savedTheme = localStorage.getItem('theme') || 'system';
+
+            if (savedTheme === 'system') {
+                savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            applyTheme(savedTheme);
+
+            const themeToggleInput = document.getElementById('themeSwitch');
+            if (savedTheme === 'dark') {
+                themeToggleInput.checked = true;
+            }
+        });
     </script>
 </head>
 
@@ -34,6 +62,32 @@
                 <div class="nav-links">
                     <a href="https://docs.sms-gate.app">Documentation</a>
                     <a href="https://github.com/capcom6/android-sms-gateway">GitHub</a>
+
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="themeSwitch">
+                            <input type="checkbox" id="themeSwitch" onclick="toggleTheme()">
+                            <div class="slider round">
+                                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -258,7 +312,7 @@
                             <div class="library-icon">
                                 <svg viewBox="0 0 24 24" width="32" height="32">
                                     <path fill="currentColor"
-                                        d="M3,3H21V21H3V3M13.65,11.65L12.91,10.91C12.5,10.5 12.5,9.82 12.91,9.41L14.12,8.2L13.06,7.14C12.65,6.73 12,6.73 11.59,7.14L7.91,10.82C7.5,11.23 7.5,11.91 7.91,12.32L11.59,16C12,16.41 12.65,16.41 13.06,16L14.12,14.94L12.91,13.73C12.5,13.32 12.5,12.64 12.91,12.23L13.65,11.49V11.65Z" />
+                                        d="M13.65,11.65L12.91,10.91C12.5,10.5 12.5,9.82 12.91,9.41L14.12,8.2L13.06,7.14C12.65,6.73 12,6.73 11.59,7.14L7.91,10.82C7.5,11.23 7.5,11.91 7.91,12.32L11.59,16C12,16.41 12.65,16.41 13.06,16L14.12,14.94L12.91,13.73C12.5,13.32 12.5,12.64 12.91,12.23L13.65,11.49V11.65Z" />
                                 </svg>
                             </div>
                             <span class="library-lang">Go</span>

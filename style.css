@@ -8,6 +8,15 @@
     --border-color: #e2e8f0;
 }
 
+/* Dark theme variables */
+:root[data-theme='dark'] {
+    --background-color: #121212;
+    --text-color: #f8f8f2;
+    --secondary-color: #9ca3af;
+    --light-gray: #262626;
+    --border-color: #3f3f3f;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +27,8 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -31,6 +42,7 @@ nav {
     background: var(--background-color);
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 nav .container {
@@ -47,6 +59,7 @@ nav .container {
     font-size: 1.25rem;
     color: var(--text-color);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .nav-links {
@@ -70,6 +83,7 @@ nav .container {
     padding: 6rem 0;
     text-align: center;
     background: linear-gradient(to bottom, var(--light-gray), var(--background-color));
+    transition: background 0.3s;
 }
 
 .hero h1 {
@@ -77,6 +91,7 @@ nav .container {
     font-weight: 800;
     margin-bottom: 1.5rem;
     color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .subtitle {
@@ -84,6 +99,7 @@ nav .container {
     color: var(--secondary-color);
     max-width: 600px;
     margin: 0 auto 2rem;
+    transition: color 0.3s;
 }
 
 .cta-buttons {
@@ -115,6 +131,7 @@ nav .container {
 .button.secondary {
     background: var(--light-gray);
     color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
 }
 
 .button.secondary:hover {
@@ -125,12 +142,15 @@ nav .container {
 .features {
     padding: 6rem 0;
     background: var(--background-color);
+    transition: background-color 0.3s;
 }
 
 .features h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .feature-grid {
@@ -144,7 +164,7 @@ nav .container {
     text-align: center;
     border-radius: 1rem;
     background: var(--light-gray);
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 .feature-card:hover {
@@ -154,22 +174,28 @@ nav .container {
 .feature-card svg {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    transition: color 0.3s;
 }
 
 .feature-card h3 {
     margin-bottom: 1rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 /* How It Works Section */
 .how-it-works {
     padding: 6rem 0;
     background: var(--light-gray);
+    transition: background-color 0.3s;
 }
 
 .how-it-works h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .steps {
@@ -201,12 +227,15 @@ nav .container {
 .code-example {
     padding: 6rem 0;
     background: var(--background-color);
+    transition: background-color 0.3s;
 }
 
 .code-example h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .code-block {
@@ -215,6 +244,7 @@ nav .container {
     padding: 2rem;
     overflow-x: auto;
     position: relative;
+    transition: background-color 0.3s;
 }
 
 .code-block pre {
@@ -255,12 +285,15 @@ nav .container {
 .modes {
     padding: 6rem 0;
     background: var(--light-gray);
+    transition: background-color 0.3s;
 }
 
 .modes h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .mode-grid {
@@ -277,7 +310,7 @@ nav .container {
     padding: 2rem;
     display: flex;
     gap: 1.5rem;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 .mode-card:hover {
@@ -287,11 +320,18 @@ nav .container {
 .mode-icon {
     color: var(--primary-color);
     flex-shrink: 0;
+    transition: color 0.3s;
 }
 
 .mode-content h3 {
     margin-bottom: 1rem;
     color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.mode-content p {
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .mode-features {
@@ -303,6 +343,8 @@ nav .container {
     margin-bottom: 0.5rem;
     position: relative;
     padding-left: 1.5rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .mode-features li::before {
@@ -332,12 +374,15 @@ nav .container {
 .libraries {
     padding: 6rem 0;
     background: var(--background-color);
+    transition: background-color 0.3s;
 }
 
 .libraries h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .libraries-grid {
@@ -352,7 +397,7 @@ nav .container {
     background: var(--light-gray);
     border-radius: 1rem;
     padding: 2rem;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 .library-card:hover {
@@ -368,11 +413,14 @@ nav .container {
 
 .library-icon {
     color: var(--primary-color);
+    transition: color 0.3s;
 }
 
 .library-lang {
     font-weight: 600;
     font-size: 1.25rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .library-install {
@@ -382,6 +430,7 @@ nav .container {
     margin: 1rem 0;
     overflow-x: auto;
     position: relative;
+    transition: background-color 0.3s;
 }
 
 .library-install code {
@@ -411,12 +460,15 @@ nav .container {
 .cli-section {
     padding: 6rem 0;
     background: var(--light-gray);
+    transition: background-color 0.3s;
 }
 
 .cli-section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .cli-container {
@@ -428,6 +480,7 @@ nav .container {
     background: var(--background-color);
     border-radius: 1rem;
     padding: 2rem;
+    transition: background-color 0.3s;
 }
 
 .cli-header {
@@ -439,6 +492,12 @@ nav .container {
 
 .cli-icon {
     color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.cli-content p {
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .cli-install {
@@ -448,6 +507,7 @@ nav .container {
     margin: 1.5rem 0;
     overflow-x: auto;
     position: relative;
+    transition: background-color 0.3s;
 }
 
 .cli-install code {
@@ -462,6 +522,8 @@ nav .container {
 
 .cli-examples h3 {
     margin-bottom: 1rem;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .example-block {
@@ -471,6 +533,7 @@ nav .container {
     margin: 1rem 0;
     overflow-x: auto;
     position: relative;
+    transition: background-color 0.3s;
 }
 
 .example-block code {
@@ -489,6 +552,7 @@ nav .container {
 footer {
     background: var(--light-gray);
     padding: 3rem 0;
+    transition: background-color 0.3s;
 }
 
 .footer-content {
@@ -507,6 +571,7 @@ footer {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.2s;
 }
 
 .footer-links a:hover {
@@ -516,6 +581,7 @@ footer {
 .copyright {
     color: var(--secondary-color);
     font-size: 0.875rem;
+    transition: color 0.3s;
 }
 
 /* Responsive Design */
@@ -552,4 +618,77 @@ footer {
     .code-example {
         padding: 4rem 0;
     }
+}
+
+/* Theme Toggle Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary-color);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.sun-icon,
+.moon-icon {
+    width: 16px;
+    height: 16px;
+    color: #fff;
 }
