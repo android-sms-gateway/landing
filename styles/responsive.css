@@ -1,0 +1,54 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mode-features li {
+        padding-left: 0;
+    }
+
+    .mode-features li::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .modes,
+    .features,
+    .how-it-works,
+    .code-example,
+    .libraries,
+    .cli-section,
+    .services {
+        padding: 4rem 0;
+    }
+}
+
