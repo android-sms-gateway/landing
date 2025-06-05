@@ -186,7 +186,7 @@ nav .container {
 /* How It Works Section */
 .how-it-works {
     padding: 6rem 0;
-    background: var(--light-gray);
+    background: var(--background-color);
     transition: background-color 0.3s;
 }
 
@@ -226,7 +226,7 @@ nav .container {
 /* Code Example Section */
 .code-example {
     padding: 6rem 0;
-    background: var(--background-color);
+    background: var(--light-gray);
     transition: background-color 0.3s;
 }
 
@@ -691,4 +691,68 @@ input:checked+.slider:before {
     width: 16px;
     height: 16px;
     color: #fff;
+}
+
+/* Services Section */
+.services {
+    padding: 6rem 0;
+    background: var(--background-color);
+    transition: background-color 0.3s;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--light-gray);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon svg {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.service-card p {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    transition: color 0.3s;
+}
+
+.service-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.service-links .button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
 }
