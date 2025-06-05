@@ -8,46 +8,17 @@
     <meta name="keywords"
         content="SMS Gateway, Android, SMS, Messaging, Secure, Open Source, Private, Gateway, SMSGate, TextBee, HttpSMS, SMS Gateway for Android, Webhook, API, REST, Cloud">
     <title>SMSGate - Private & Secure SMS Gateway for Android</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sections.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/clipboard.js"></script>
     <script>
-        function copyCode(element) {
-            const code = element.previousElementSibling.textContent;
-            navigator.clipboard.writeText(code).then(() => {
-                const button = element;
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                setTimeout(() => {
-                    button.textContent = originalText;
-                }, 2000);
-            });
-        }
-
-        // Theme toggle functionality
-        function applyTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        }
-
-        function toggleTheme() {
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            applyTheme(newTheme);
-        }
-
-        // On page load set the theme based on localStorage
+        // On page load set the theme
         document.addEventListener('DOMContentLoaded', () => {
-            let savedTheme = localStorage.getItem('theme') || 'system';
-
-            if (savedTheme === 'system') {
-                savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-
-            applyTheme(savedTheme);
-
-            const themeToggleInput = document.getElementById('themeSwitch');
-            if (savedTheme === 'dark') {
-                themeToggleInput.checked = true;
-            }
+            initializeTheme();
         });
     </script>
 </head>
@@ -399,7 +370,7 @@
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section class="services">
             <div class="container">
                 <h2>Additional Services</h2>
                 <div class="service-grid">
