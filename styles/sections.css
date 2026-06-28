@@ -50,15 +50,26 @@
 }
 
 .feature-card {
+    display: block;
     padding: 2rem;
     text-align: center;
     border-radius: 1rem;
     background: var(--light-gray);
+    text-decoration: none;
+    color: inherit;
     transition: transform 0.2s, background-color 0.3s;
+}
+
+.feature-card:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    transform: translateY(-5px);
+    background: var(--border-color);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    background: var(--border-color);
 }
 
 .feature-card svg {
@@ -95,15 +106,26 @@
 }
 
 .use-case-card {
+    display: block;
     padding: 2rem;
     text-align: center;
     border-radius: 1rem;
     background: var(--background-color);
+    text-decoration: none;
+    color: inherit;
     transition: transform 0.2s, background-color 0.3s;
+}
+
+.use-case-card:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    transform: translateY(-5px);
+    background: var(--border-color);
 }
 
 .use-case-card:hover {
     transform: translateY(-5px);
+    background: var(--border-color);
 }
 
 .use-case-icon svg {
@@ -453,4 +475,79 @@
 .service-links .button {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 6rem 0;
+    background: var(--light-gray);
+    transition: background-color 0.3s;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.faq-item summary {
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.3s;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: transform 0.2s;
+    line-height: 1;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item summary:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+
+.faq-item p {
+    padding: 0 1.5rem 1.25rem;
+    color: var(--secondary-color);
+    line-height: 1.7;
+    transition: color 0.3s;
+}
+
+.faq-more {
+    text-align: center;
+    margin-top: 2rem;
 }

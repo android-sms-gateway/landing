@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="A secure, open-source solution for sending and receiving SMS messages via Android devices. No registration, email, or phone number required - just install and use.">
+        content="Open-source SMS gateway for Android. Send and receive SMS and MMS via REST API, webhooks, SMPP, or SMTP. No registration required. Download the APK free.">
     <meta name="keywords"
-        content="SMS Gateway, Android, SMS, Messaging, Secure, Open Source, Private, Gateway, SMSGate, TextBee, HttpSMS, SMS Gateway for Android, Webhook, API, REST, Cloud">
-    <title>SMSGate - Private & Secure SMS Gateway for Android</title>
+        content="SMS Gateway, Android, SMS, Messaging, Secure, Open Source, Private, Gateway, SMSGate, TextBee, HttpSMS, SMS Gateway for Android, Webhook, API, REST, Cloud, SMS API, Android SMS, open source, SMS webhook, SMPP, SMTP, SMS gateway open source">
+    <title>Open Source SMS Gateway for Android — SMS API, Webhooks &amp; SMPP | SMSGate</title>
+    <link rel="canonical" href="https://sms-gate.app/">
+    <meta property="og:title" content="Open Source SMS Gateway for Android — SMSGate">
+    <meta property="og:description"
+        content="Send and receive SMS and MMS via REST API, webhooks, SMPP, or SMTP. Open-source Android SMS gateway — no registration required.">
+    <meta property="og:url" content="https://sms-gate.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sms-gate.app/android-chrome-512x512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Open Source SMS Gateway for Android — SMSGate">
+    <meta name="twitter:description"
+        content="Send and receive SMS and MMS via REST API, webhooks, SMPP, or SMTP. Open-source Android SMS gateway — no registration required.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
@@ -18,13 +31,96 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/sections.css">
     <link rel="stylesheet" href="styles/responsive.css">
-    <script src="scripts/theme.js"></script>
-    <script src="scripts/clipboard.js"></script>
     <script>
-        // On page load set the theme
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeTheme();
-        });
+        function applyTheme(t) { document.documentElement.setAttribute("data-theme", t), localStorage.setItem("theme", t) } function toggleTheme() { const t = "light" === (localStorage.getItem("theme") || "light") ? "dark" : "light"; applyTheme(t) } function initializeTheme() { let t = localStorage.getItem("theme") || "system"; "system" === t && (t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"), applyTheme(t); const e = document.getElementById("themeSwitch"); e && (e.checked = "dark" === t) } window.toggleTheme = toggleTheme, window.initializeTheme = initializeTheme, initializeTheme(), document.addEventListener("DOMContentLoaded", initializeTheme);
+    </script>
+    <script src="scripts/clipboard.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SMSGate",
+        "operatingSystem": "Android 5.0+",
+        "applicationCategory": "Communication",
+        "description": "Open-source SMS gateway for Android. Send and receive SMS/MMS via REST API, webhooks, SMPP, or SMTP. No registration required.",
+        "url": "https://sms-gate.app",
+        "downloadUrl": "https://github.com/capcom6/android-sms-gateway/releases/latest/download/app-release.apk",
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Aleksandr Soloshenko"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "Is SMSGate free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, SMSGate is completely free and open-source under the Apache License 2.0. No registration, email, or phone number is required to use the app."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What Android versions does SMSGate support?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SMSGate supports Android 5.0 (Lollipop) and above. The app works on both smartphones and tablets running compatible Android versions."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Do I need an internet connection to use SMSGate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In Local mode, no internet is required — you communicate directly with the device over your local network. Cloud mode requires internet access and uses Firebase Cloud Messaging for push notifications."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Can I send SMS from multiple SIM cards?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, SMSGate supports devices with multiple SIM cards. You can configure which SIM to use for sending messages, and even send messages from multiple SIMs simultaneously."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Is my data encrypted when using SMSGate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. SMSGate supports end-to-end encryption, encrypting message content and recipient phone numbers before sending them to the API and decrypting them on the device."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Can I use SMSGate with my own server?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can deploy SMSGate's private server in your own infrastructure with a single command. This gives you complete control over data storage and the server environment."
+            }
+        }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SMSGate",
+        "url": "https://sms-gate.app",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://docs.sms-gate.app/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
     </script>
 </head>
 
@@ -77,10 +173,12 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Your Trusted SMS Gateway</h1>
+                <h1>Open Source SMS Gateway for Android</h1>
                 <p class="subtitle">A secure, open-source solution for sending and receiving SMS messages via Android
-                    devices. No registration, email, or phone number required - just install and use.<br>Compatible with
-                    Android 5.0+.</p>
+                    devices. <strong>No registration, email, or phone number required</strong> — just install and
+                    use.<br>Compatible with
+                    <strong>Android 5.0+</strong>.
+                </p>
                 <div class="cta-buttons">
                     <a href="https://github.com/capcom6/android-sms-gateway/releases/latest/download/app-release.apk"
                         class="button primary">
@@ -99,53 +197,54 @@
             <div class="container">
                 <h2>Ideal For</h2>
                 <div class="use-cases-grid">
-                    <div class="use-case-card">
+                    <a href="https://docs.sms-gate.app/resources/use-cases/#authentication" class="use-case-card">
                         <div class="use-case-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
-                                aria-hidden="true">
+                                aria-hidden="true" focusable="false">
                                 <path fill="currentColor"
                                     d="M320 64C324.6 64 329.2 65 333.4 66.9L521.8 146.8C543.8 156.1 560.2 177.8 560.1 204C559.6 303.2 518.8 484.7 346.5 567.2C329.8 575.2 310.4 575.2 293.7 567.2C121.3 484.7 80.6 303.2 80.1 204C80 177.8 96.4 156.1 118.4 146.8L306.7 66.9C310.9 65 315.4 64 320 64zM320 130.8L320 508.9C458 442.1 495.1 294.1 496 205.5L320 130.9L320 130.9z" />
                             </svg>
                         </div>
                         <h3>Authentication</h3>
                         <p>Secure two-factor authentication (2FA) and verification codes for your applications.</p>
-                    </div>
+                    </a>
 
-                    <div class="use-case-card">
+                    <a href="https://docs.sms-gate.app/features/reading-messages/" class="use-case-card">
                         <div class="use-case-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
-                                aria-hidden="true">
+                                aria-hidden="true" focusable="false">
                                 <path fill="currentColor"
                                     d="M64 192L64 224L576 224L576 192C576 156.7 547.3 128 512 128L128 128C92.7 128 64 156.7 64 192zM64 272L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 272L64 272zM128 424C128 410.7 138.7 400 152 400L200 400C213.3 400 224 410.7 224 424C224 437.3 213.3 448 200 448L152 448C138.7 448 128 437.3 128 424zM272 424C272 410.7 282.7 400 296 400L360 400C373.3 400 384 410.7 384 424C384 437.3 373.3 448 360 448L296 448C282.7 448 272 437.3 272 424z" />
                             </svg>
                         </div>
                         <h3>Transactions</h3>
                         <p>Payment confirmations, transaction alerts, and financial notifications.</p>
-                    </div>
+                    </a>
 
-                    <div class="use-case-card">
+                    <a href="https://docs.sms-gate.app/features/sending-messages/#scheduled-messages"
+                        class="use-case-card">
                         <div class="use-case-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
-                                aria-hidden="true">
+                                aria-hidden="true" focusable="false">
                                 <path fill="currentColor"
                                     d="M320 64C302.3 64 288 78.3 288 96L288 99.2C215 114 160 178.6 160 256L160 277.7C160 325.8 143.6 372.5 113.6 410.1L103.8 422.3C98.7 428.6 96 436.4 96 444.5C96 464.1 111.9 480 131.5 480L508.4 480C528 480 543.9 464.1 543.9 444.5C543.9 436.4 541.2 428.6 536.1 422.3L526.3 410.1C496.4 372.5 480 325.8 480 277.7L480 256C480 178.6 425 114 352 99.2L352 96C352 78.3 337.7 64 320 64zM258 528C265.1 555.6 290.2 576 320 576C349.8 576 374.9 555.6 382 528L258 528z" />
                             </svg>
                         </div>
                         <h3>Reminders</h3>
                         <p>Appointment reminders, medication alerts, and scheduled notifications.</p>
-                    </div>
+                    </a>
 
-                    <div class="use-case-card">
+                    <a href="https://docs.sms-gate.app/features/data-sms/" class="use-case-card">
                         <div class="use-case-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
-                                aria-hidden="true">
+                                aria-hidden="true" focusable="false">
                                 <path fill="currentColor"
                                     d="M240 88C240 74.7 229.3 64 216 64C202.7 64 192 74.7 192 88L192 128C156.7 128 128 156.7 128 192L88 192C74.7 192 64 202.7 64 216C64 229.3 74.7 240 88 240L128 240L128 296L88 296C74.7 296 64 306.7 64 320C64 333.3 74.7 344 88 344L128 344L128 400L88 400C74.7 400 64 410.7 64 424C64 437.3 74.7 448 88 448L128 448C128 483.3 156.7 512 192 512L192 552C192 565.3 202.7 576 216 576C229.3 576 240 565.3 240 552L240 512L296 512L296 552C296 565.3 306.7 576 320 576C333.3 576 344 565.3 344 552L344 512L400 512L400 552C400 565.3 410.7 576 424 576C437.3 576 448 565.3 448 552L448 512C483.3 512 512 483.3 512 448L552 448C565.3 448 576 437.3 576 424C576 410.7 565.3 400 552 400L512 400L512 344L552 344C565.3 344 576 333.3 576 320C576 306.7 565.3 296 552 296L512 296L512 240L552 240C565.3 240 576 229.3 576 216C576 202.7 565.3 192 552 192L512 192C512 156.7 483.3 128 448 128L448 88C448 74.7 437.3 64 424 64C410.7 64 400 74.7 400 88L400 128L344 128L344 88C344 74.7 333.3 64 320 64C306.7 64 296 74.7 296 88L296 128L240 128L240 88zM224 192L416 192C433.7 192 448 206.3 448 224L448 416C448 433.7 433.7 448 416 448L224 448C206.3 448 192 433.7 192 416L192 224C192 206.3 206.3 192 224 192zM240 240L240 400L400 400L400 240L240 240z" />
                             </svg>
                         </div>
                         <h3>IoT Communication</h3>
                         <p>Device alerts, status updates, and data transmission from IoT devices.</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -154,78 +253,86 @@
             <div class="container">
                 <h2>Key Features</h2>
                 <div class="feature-grid">
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="48" height="48">
+                    <a href="https://docs.sms-gate.app/privacy/" class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="48" height="48"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8l0 378.1C394 378 431.1 230.1 432 141.4L256 66.8s0 0 0 0z" />
                         </svg>
                         <h3>Privacy First</h3>
                         <p>No registration, email, or phone number required. The app doesn't store any user data more
                             than necessary outside of your infrastructure.</p>
-                    </div>
+                    </a>
 
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40">
+                    <a href="https://docs.sms-gate.app/getting-started/" class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c-35.3 0-64 28.7-64 64l-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0 0 56-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0 0 56-40 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l40 0c0 35.3 28.7 64 64 64l0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40 56 0 0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40 56 0 0 40c0 13.3 10.7 24 24 24s24-10.7 24-24l0-40c35.3 0 64-28.7 64-64l40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0 0-56 40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0 0-56 40 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-40 0c0-35.3-28.7-64-64-64l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40-56 0 0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40-56 0 0-40zM160 128l192 0c17.7 0 32 14.3 32 32l0 192c0 17.7-14.3 32-32 32l-192 0c-17.7 0-32-14.3-32-32l0-192c0-17.7 14.3-32 32-32zm192 32l-192 0 0 192 192 0 0-192z" />
                         </svg>
                         <h3>Multiple Operation Modes</h3>
                         <p>Quick start with Local or Cloud mode, or setup your own Private instance.</p>
-                    </div>
+                    </a>
 
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="48" height="48">
+                    <a href="https://docs.sms-gate.app/integration/api/" class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="48" height="48"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M96 0C78.3 0 64 14.3 64 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l0 32c0 77.4 55 142 128 156.8l0 67.2c0 17.7 14.3 32 32 32s32-14.3 32-32l0-67.2C297 398 352 333.4 352 256l0-32c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 160z" />
                         </svg>
                         <h3>Simple Integration</h3>
                         <p>RESTful API, client libraries for multiple languages, and a CLI tool.</p>
-                    </div>
+                    </a>
 
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="48" height="48">
+                    <a href="https://github.com/capcom6/android-sms-gateway" class="feature-card" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="48" height="48"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
-                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z" />
                         </svg>
                         <h3>Open Source</h3>
                         <p>Free and open-source software. Actively developed with regular updates and improvements.</p>
-                    </div>
+                    </a>
 
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48">
+                    <a href="https://docs.sms-gate.app/features/multi-sim/" class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M128 128C128 92.7 156.7 64 192 64L386.7 64C403.7 64 420 70.7 432 82.7L493.3 144C505.3 156 512 172.3 512 189.3L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 128zM224 320C206.3 320 192 334.3 192 352L192 392L320 392L320 320L224 320zM192 480C192 497.7 206.3 512 224 512L272 512L272 440L192 440L192 480zM448 480L448 440L320 440L320 512L416 512C433.7 512 448 497.7 448 480zM448 352C448 334.3 433.7 320 416 320L368 320L368 392L448 392L448 352z" />
                         </svg>
                         <h3>Multiple SIM Support</h3>
                         <p>Manage and send messages from multiple SIM cards on a single device for enhanced flexibility.
                         </p>
-                    </div>
+                    </a>
 
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48">
+                    <a href="https://docs.sms-gate.app/features/data-sms/" class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M96 160C96 124.7 124.7 96 160 96L480 96C515.3 96 544 124.7 544 160L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 160zM240 164C215.7 164 196 183.7 196 208L196 256C196 280.3 215.7 300 240 300L272 300C296.3 300 316 280.3 316 256L316 208C316 183.7 296.3 164 272 164L240 164zM236 208C236 205.8 237.8 204 240 204L272 204C274.2 204 276 205.8 276 208L276 256C276 258.2 274.2 260 272 260L240 260C237.8 260 236 258.2 236 256L236 208zM376 164C365 164 356 173 356 184C356 193.7 362.9 201.7 372 203.6L372 280C372 291 381 300 392 300C403 300 412 291 412 280L412 184C412 173 403 164 392 164L376 164zM228 360C228 369.7 234.9 377.7 244 379.6L244 456C244 467 253 476 264 476C275 476 284 467 284 456L284 360C284 349 275 340 264 340L248 340C237 340 228 349 228 360zM324 384L324 432C324 456.3 343.7 476 368 476L400 476C424.3 476 444 456.3 444 432L444 384C444 359.7 424.3 340 400 340L368 340C343.7 340 324 359.7 324 384zM368 380L400 380C402.2 380 404 381.8 404 384L404 432C404 434.2 402.2 436 400 436L368 436C365.8 436 364 434.2 364 432L364 384C364 381.8 365.8 380 368 380z" />
                         </svg>
                         <h3>Data SMS Support</h3>
                         <p>Send and receive binary data SMS for advanced applications like IoT device communication.</p>
-                    </div>
+                    </a>
 
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48">
+                    <a href="https://docs.sms-gate.app/features/status-tracking/" class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M296 64C450.6 64 576 189.4 576 344C576 357.3 565.3 368 552 368C538.7 368 528 357.3 528 344C528 215.9 424.1 112 296 112C282.7 112 272 101.3 272 88C272 74.7 282.7 64 296 64zM272 184C272 170.7 282.7 160 296 160C397.6 160 480 242.4 480 344C480 357.3 469.3 368 456 368C442.7 368 432 357.3 432 344C432 268.9 371.1 208 296 208C282.7 208 272 197.3 272 184zM90.4 206.7C99.2 188.8 122.8 186.8 136.9 200.9L265.4 329.4L297.4 297.4C309.9 284.9 330.2 284.9 342.7 297.4C355.2 309.9 355.2 330.2 342.7 342.7L310.7 374.7L439.2 503.2C453.3 517.3 451.2 540.8 433.4 549.7C399.2 566.6 360.8 576.1 320.1 576.1C178.7 576.1 64.1 461.5 64.1 320.1C64.1 279.4 73.6 240.9 90.5 206.8z" />
                         </svg>
                         <h3>Message Status Tracking</h3>
                         <p>Real-time tracking of message delivery status with detailed reporting and notifications.</p>
-                    </div>
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48">
+                    </a>
+                    <a href="https://docs.sms-gate.app/features/mms/" class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="48" height="48"
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M192 128C192 92.7 220.7 64 256 64L576 64C611.3 64 640 92.7 640 128L640 352C640 387.3 611.3 416 576 416L256 416C220.7 416 192 387.3 192 352L192 128zM320 160C320 142.3 305.7 128 288 128C270.3 128 256 142.3 256 160C256 177.7 270.3 192 288 192C305.7 192 320 177.7 320 160zM476.5 171.5C472.1 164.4 464.4 160 456 160C447.6 160 439.9 164.4 435.5 171.5L381.5 259.8L363.6 234.2C359.1 227.8 351.8 224 343.9 224C336 224 328.7 227.8 324.2 234.2L268.2 314.2C263.1 321.5 262.4 331.1 266.6 339C270.8 346.9 279.1 352 288 352L544 352C552.7 352 560.7 347.3 564.9 339.7C569.1 332.1 569 322.9 564.4 315.4L476.4 171.4zM144 192L144 352C144 413.9 194.1 464 256 464L448 464L448 480C448 515.3 419.3 544 384 544L64 544C28.7 544 0 515.3 0 480L0 256C0 220.7 28.7 192 64 192L144 192zM52 260L52 284C52 292.8 59.2 300 68 300L92 300C100.8 300 108 292.8 108 284L108 260C108 251.2 100.8 244 92 244L68 244C59.2 244 52 251.2 52 260zM68 340C59.2 340 52 347.2 52 356L52 380C52 388.8 59.2 396 68 396L92 396C100.8 396 108 388.8 108 380L108 356C108 347.2 100.8 340 92 340L68 340zM68 436C59.2 436 52 443.2 52 452L52 476C52 484.8 59.2 492 68 492L92 492C100.8 492 108 484.8 108 476L108 452C108 443.2 100.8 436 92 436L68 436z" />
                         </svg>
                         <h3>MMS Support</h3>
                         <p>Receive notifications with metadata for incoming MMS messages.</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -561,11 +668,55 @@
         </section>
     </main>
 
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Is SMSGate free?</summary>
+                    <p>Yes, SMSGate is completely free and open-source under the Apache License 2.0. No registration,
+                        email, or phone number is required to use the app.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What Android versions does SMSGate support?</summary>
+                    <p>SMSGate supports <strong>Android 5.0 (Lollipop) and above</strong>. The app works on both
+                        smartphones and tablets running compatible Android versions.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Do I need an internet connection?</summary>
+                    <p>In <strong>Local mode</strong>, no internet is required — you communicate directly with the
+                        device over your local network. <strong>Cloud mode</strong> requires internet access and uses
+                        Firebase Cloud Messaging for push notifications.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I send SMS from multiple SIM cards?</summary>
+                    <p>Yes, SMSGate supports devices with <strong>multiple SIM cards</strong>. You can configure which
+                        SIM to use for sending messages and even send messages from multiple SIMs simultaneously.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is my data encrypted?</summary>
+                    <p>Yes. SMSGate supports <strong>end-to-end encryption</strong>, encrypting message content and
+                        recipient phone numbers before sending them to the API and decrypting them on the device.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I use my own server?</summary>
+                    <p>Yes, you can deploy SMSGate's <strong>private server</strong> in your own infrastructure with a
+                        single command. This gives you complete control over data storage and the server environment.
+                    </p>
+                </details>
+            </div>
+            <div class="faq-more">
+                <a href="https://docs.sms-gate.app/faq/general/" class="button secondary">View All FAQs</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
                     <a href="https://docs.sms-gate.app/license/">License</a>
+                    <a href="https://docs.sms-gate.app/privacy/policy/">Privacy</a>
                     <a href="https://github.com/capcom6/android-sms-gateway/issues">Issues</a>
                     <a href="https://docs.sms-gate.app">Documentation</a>
                     <a href="https://discord.gg/vv9raFK4gX">Discord</a>
