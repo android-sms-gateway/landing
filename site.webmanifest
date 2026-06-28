@@ -1,6 +1,7 @@
 {
-    "name": "SMSGate - Private & Secure SMS Gateway for Android",
+    "name": "SMSGate - Open Source SMS Gateway for Android",
     "short_name": "SMSGate",
+    "description": "Open-source SMS gateway for Android. Send and receive SMS and MMS via REST API, webhooks, SMPP, or SMTP.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,5 +16,6 @@
     ],
     "theme_color": "#2563eb",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "start_url": "/"
 }
