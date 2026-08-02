@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "smsgate",
+      "type": "skill-md",
+      "description": "Integrating SMSGate with AI agents: sending and receiving SMS, webhooks, and JWT authentication",
+      "url": "https://docs.sms-gate.app/skill.md",
+      "digest": "sha256:fcd485c24333fd387ce0c87030d3ecc706cedeb2741fde95ee44ce2138ffef2a"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://api.sms-gate.app/3rdparty/v1",
+            "service-desc": [
+                {
+                    "href": "https://api.sms-gate.app/docs/doc.json",
+                    "type": "application/json"
+                }
+            ],
+            "service-doc": [
+                {
+                    "href": "https://docs.sms-gate.app/",
+                    "type": "text/html"
+                }
+            ],
+            "status": [
+                {
+                    "href": "https://api.sms-gate.app/3rdparty/v1/health/ready",
+                    "type": "application/json"
+                }
+            ]
+        }
+    ]
+}
