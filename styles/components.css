@@ -122,6 +122,10 @@ input:checked+.slider:before {
     transition: background-color 0.3s;
 }
 
+.code-block + .code-block {
+    margin-top: 1.5rem;
+}
+
 .code-block pre {
     margin: 0;
 }
